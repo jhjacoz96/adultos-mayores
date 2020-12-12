@@ -23,6 +23,7 @@
         <v-icon>mdi-help</v-icon>
       </v-btn>
     </v-fab-transition>
+    <base-alert />
   </section>
 </template>
 

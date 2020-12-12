@@ -91,8 +91,20 @@ const router = new Router({
         {
           path: 'salud-psicoemocional',
           name: 'Salud-psicoemocional',
-          component: () => import('@/views/nutricion/Index.vue'),
-          meta: { src: require('@/assets/alimentos.jpg') },
+          component: () => import('@/views/psicoemocional/Index.vue'),
+          meta: { src: require('@/assets/salud-psicoemocional.jpg') },
+        },
+        {
+          path: 'login',
+          name: 'Login',
+          component: () => import('@/views/login/Index.vue'),
+          meta: { src: require('@/assets/ayuda.jpg') },
+        },
+        {
+          path: 'Administrador',
+          name: 'administrador',
+          component: () => import('@/views/administrador/Index.vue'),
+          meta: { src: require('@/assets/ayuda.jpg') },
         },
         {
           path: 'ayuda',

@@ -17,44 +17,51 @@
             icon="mdi-comment-processing"
             title="Agenda tu cita"
           />
-          <v-autocomplete
-            v-model="provincia"
-            :items="provincias"
-            :filter="provinciaFilter"
-            item-text="name"
-            item-value="id"
-            label="Provincia"
-            @change="getProvincias()"
-          />
-          <v-autocomplete
-            v-model="canton"
-            :disabled="disabledCanton"
-            :items="cantones"
-            :filter="cantonFilter"
-            item-text="name"
-            item-value="id"
-            label="Cantón"
-            @change="getEspecialidades()"
-          />
-          <v-autocomplete
-            v-model="especialidad"
-            :disabled="disabledEsp"
-            :items="especialidades"
-            :filter="especialidadFilter"
-            item-text="name"
-            item-value="id"
-            label="Especialidades disponibles"
-          />
-          <v-textarea
-            v-model="motivo"
-            name="input-7-1"
-            label="Motivo de consulta"
-          />
+          <v-form>
+            <v-text-field
+              v-model="nombre"
+              label="Nombre"
+            />
+            <v-autocomplete
+              v-model="provincia"
+              :items="provincias"
+              :filter="provinciaFilter"
+              item-text="name"
+              item-value="name"
+              label="Provincia"
+              @change="getProvincias()"
+            />
+            <v-autocomplete
+              v-model="canton"
+              :disabled="disabledCanton"
+              :items="cantones"
+              :filter="cantonFilter"
+              item-text="name"
+              item-value="name"
+              label="Cantón"
+              @change="getEspecialidades()"
+            />
+            <v-autocomplete
+              v-model="especialidad"
+              :disabled="disabledEsp"
+              :items="especialidades"
+              :filter="especialidadFilter"
+              item-text="name"
+              item-value="name"
+              label="Especialidades disponibles"
+            />
+            <v-textarea
+              v-model="descripcion"
+              name="input-7-1"
+              label="Motivo de consulta"
+            />
+          </v-form>
           <v-btn
             :disabled="disabledEsp"
-            color="accent"
+            color="primary"
             class="font-weight-bold"
             x-large
+            @click.prevent="generarCita()"
           >
             Generar consulta
           </v-btn>
@@ -76,6 +83,7 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
   export default {
     name: 'SectionNews',
 
@@ -84,9 +92,11 @@
     },
     data () {
       return {
+        nombre: '',
         provincia: null,
         especialidad: null,
         canton: null,
+        descripcion: '',
         disabledCanton: true,
         disabledEsp: true,
         motivo: '',
@@ -177,6 +187,7 @@
       this.getProvincias()
     },
     methods: {
+      ...mapActions(['postCita']),
       provinciaFilter (item, queryText, itemText) {
         const text = item.name.toLowerCase()
         const searchText = queryText.toLowerCase()
@@ -207,7 +218,7 @@
         if (!this.provincia) {
           this.disabledCanton = true
         } else {
-          const resp = this.provincias.find(res => res.id === this.provincia)
+          const resp = this.provincias.find(res => res.name === this.provincia)
           if (Object.prototype.hasOwnProperty.call(resp, 'canton')) {
             this.cantones = [...resp.canton]
           }
@@ -217,11 +228,21 @@
       getEspecialidades () {
         this.especialidades = []
         if (!this.canton) this.disabledEsp = true
-        const resp = this.cantones.find(res => res.id === this.canton)
+        const resp = this.cantones.find(res => res.name === this.canton)
         if (Object.prototype.hasOwnProperty.call(resp, 'especialidades')) {
           this.especialidades = [...resp.especialidades]
         }
         this.disabledEsp = false
+      },
+      generarCita () {
+        const cita = {
+          nombre: this.nombre,
+          canton: this.canton,
+          provincia: this.provincia,
+          descripcion: this.descripcion,
+          especialidad: this.especialidad,
+        }
+        this.postCita(cita)
       },
     },
   }

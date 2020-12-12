@@ -36,19 +36,23 @@
                 rounded
               >
                 <v-list
-                  three-line
+                  three
+                  line
                 >
                   <v-list-item>
-                    <v-list-item-avatar :color="colorRandom()">
+                    <v-list-item-avatar :color="colorRandom">
                       <span class="white--text headline">{{ item.nombre | primeraLetra }}</span>
                     </v-list-item-avatar>
                     <v-list-item-content>
-                      <v-list-item-title v-text="item.nombre" />
+                      <v-list-item-title>
+                        {{ item.nombre }}
+                      </v-list-item-title>
                       <v-list-item-subtitle
                         class="mb-2"
-                        v-text="item.fecha"
-                      />
-                      <v-list-item-subtitle v-text="item.comentario" />
+                      >
+                        {{ item.fecha | moment('dddd, MMMM Do YYYY') }}
+                      </v-list-item-subtitle>
+                      <v-list-item-subtitle v-text="item.descripcion" />
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -59,7 +63,7 @@
                 class="mt-3 ml-5"
               >
                 <v-list
-                  v-if="item.comentarios != null"
+                  v-if="item.respuesta"
                   three
                   line
                 >
@@ -78,9 +82,10 @@
                       </v-list-item-title>
                       <v-list-item-subtitle
                         class="mb-2"
-                        v-text="item.comentarios.fecha"
-                      />
-                      <v-list-item-subtitle v-text="item.comentarios.comentario" />
+                      >
+                        {{ item.respuesta.fecha | moment('dddd, MMMM Do YYYY') }}
+                      </v-list-item-subtitle>
+                      <v-list-item-subtitle v-text="item.respuesta.descripcion" />
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -105,23 +110,30 @@
             space="4"
             color="primary"
           />
+          <v-form>
+            <v-text-field
+              v-model="comentario.nombre"
+              label="Nombre"
+            />
 
-          <v-text-field label="Nombre" />
+            <v-text-field
+              v-model="comentario.titulo"
+              label="Titulo"
+            />
 
-          <v-text-field label="Correo" />
-
-          <base-textarea
-            class="mb-6"
-            label="Ingrese su comentario..."
-          />
-          <base-btn
-            color="accent"
-            href="mailto:shop@vuetifyjs.com?subject=Zero%20Theme%20Question"
-            outlined
-            target="_blank"
+            <base-textarea
+              v-model="comentario.descripcion"
+              class="mb-6"
+              label="Ingrese su comentario..."
+            />
+          </v-form>
+          <v-btn
+            color="primary"
+            large
+            @click.prevent="comentar()"
           >
             Enviar
-          </base-btn>
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -129,6 +141,7 @@
 </template>
 
 <script>
+  import { mapActions, mapState } from 'vuex'
   export default {
     name: 'SectionKeepInTouch',
     filters: {
@@ -138,33 +151,38 @@
     },
     data () {
       return {
-        comentarios: [
-          { id: 1, nombre: 'Jhon', fecha: 'Hace 2 dias', comentario: 'Quiero mucha información' },
-          { id: 2, nombre: 'Maria', fecha: 'Hace 2 dias', comentario: '¿Cómo deben comer los' },
-          { id: 3, nombre: 'Saul', fecha: 'Hace 2 dias', comentario: '¿Cuales son las especialidades?' },
-          { id: 4, nombre: 'karla', fecha: 'Hace 2 dias', comentario: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, eos laboriosam culpa illum quibusdam eum alias ea iusto nemo optio quas. Ipsum ab tempora facilis odio sed quidem fuga excepturi.' },
-          { id: 5, nombre: 'karla', fecha: 'Hace 2 dias', comentario: 'Comentario de prueba' },
-          {
-            id: 6,
-            nombre: 'karla',
-            fecha: 'Hace 2 dias',
-            comentario: 'Comentario de prueba',
-            comentarios: {
-              id: 1,
-              comentario: 'HOLa',
-              fecha: 'Hace 3 dias',
-            },
-          },
-          { id: 7, nombre: 'Jhon', fecha: 'Hace 2 dias', comentario: 'Quiero mucha información' },
-        ],
+        comentario: {
+          nombre: '',
+          titulo: '',
+          descripcion: '',
+        },
+        nombre: '',
+        titulo: '',
+        descripcion: '',
       }
     },
-    methods: {
+    computed: {
+      ...mapState(['comentarios']),
       colorRandom () {
         var colors = ['blue', 'red', 'green']
         const i = Math.floor(Math.random() * (colors.length))
         const mycolor = colors[i]
         return mycolor
+      },
+    },
+    created () {
+      this.getComentarios()
+    },
+    methods: {
+      ...mapActions(['getComentarios']),
+      ...mapActions(['postComentario']),
+
+      comentar () {
+        const formData = new FormData()
+        formData.append('nombre', this.nombre)
+        formData.append('titulo', this.titulo)
+        formData.append('descripcion', this.descripcion)
+        this.postComentario(this.comentario)
       },
     },
   }

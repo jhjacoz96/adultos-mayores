@@ -14,32 +14,26 @@
             <base-section-heading title="Inforgrafías">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, in! Asperiores, impedit libero. Veniam rerum saepe unde nihil possimus quibusdam esse accusamus mollitia magni fuga.
             </base-section-heading>
-            <v-row
-              justify="right"
+            <v-tabs
+              v-model="tab"
+              vertical
             >
-              <v-col>
-                <v-tabs
-                  v-model="tab"
-                  vertical
-                >
-                  <v-tab class="accent">
-                    Salud física
-                  </v-tab>
-                  <v-tab class="accent">
-                    Cuidados de la piel y prevención de accidentes
-                  </v-tab>
-                  <v-tab class="accent">
-                    salud psicoemocional
-                  </v-tab>
-                  <v-tab class="accent">
-                    salud espiritual
-                  </v-tab>
-                  <v-tab class="accent">
-                    Nutrición
-                  </v-tab>
-                </v-tabs>
-              </v-col>
-            </v-row>
+              <v-tab class="accent">
+                Salud física
+              </v-tab>
+              <v-tab class="accent">
+                Cuidados de la piel y prevención de accidentes
+              </v-tab>
+              <v-tab class="accent">
+                salud psicoemocional
+              </v-tab>
+              <v-tab class="accent">
+                salud espiritual
+              </v-tab>
+              <v-tab class="accent">
+                Nutrición
+              </v-tab>
+            </v-tabs>
           </v-container>
         </base-section>
       </v-theme-provider>

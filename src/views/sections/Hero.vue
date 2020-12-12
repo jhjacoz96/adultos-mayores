@@ -23,9 +23,13 @@
             :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
             class="d-flex flex-wrap"
           >
-            <base-btn>
+            <v-btn
+              to="/quienes-somos"
+              outlined
+              large
+            >
               Leer más
-            </base-btn>
+            </v-btn>
 
             <!-- <span class="font-weight-bold ml-6 mr-4 my-4">or</span>
 
