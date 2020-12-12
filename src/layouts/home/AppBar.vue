@@ -79,9 +79,24 @@
               </v-list-item>
             </v-list>
           </v-menu>
+          <v-btn
+            v-if="loggout"
+            icon
+            color="primary"
+            @click="sessionOff(false)"
+          >
+            <v-icon>mdi-account-off</v-icon>
+          </v-btn>
+          <v-btn
+            v-else
+            icon
+            color="primary"
+            to="/login"
+          >
+            <v-icon>mdi-account</v-icon>
+          </v-btn>
         </v-tabs>
       </div>
-
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = !drawer"
@@ -97,9 +112,9 @@
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
     name: 'HomeAppBar',
-
     components: {
       HomeDrawer: () => import('./Drawer'),
     },
@@ -139,6 +154,12 @@
         },
       ],
     }),
+    computed: {
+      ...mapState(['loggout']),
+    },
+    methods: {
+      ...mapMutations(['sessionOff']),
+    },
   }
 </script>
 

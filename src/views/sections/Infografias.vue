@@ -2,7 +2,7 @@
   <v-row>
     <v-col
       cols="!2"
-      md="5"
+      md="6"
     >
       <v-theme-provider dark>
         <base-section
@@ -12,28 +12,36 @@
         >
           <v-container>
             <base-section-heading title="Inforgrafías">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, in! Asperiores, impedit libero. Veniam rerum saepe unde nihil possimus quibusdam esse accusamus mollitia magni fuga.
+              En esta sección podrás visualizar una serie de infografias referentes a cada especialidad.
             </base-section-heading>
-            <v-tabs
-              v-model="tab"
-              vertical
-            >
-              <v-tab class="accent">
-                Salud física
-              </v-tab>
-              <v-tab class="accent">
-                Cuidados de la piel y prevención de accidentes
-              </v-tab>
-              <v-tab class="accent">
-                salud psicoemocional
-              </v-tab>
-              <v-tab class="accent">
-                salud espiritual
-              </v-tab>
-              <v-tab class="accent">
-                Nutrición
-              </v-tab>
-            </v-tabs>
+            <v-row>
+              <v-col
+                md="7"
+                class="accent"
+              >
+                <v-tabs
+                  v-model="tab"
+                  vertical
+                >
+                  <v-tab class="accent">
+                    Salud física
+                  </v-tab>
+                  <v-tab class="accent">
+                    Cuidados de la piel y prevención de accidentes
+                  </v-tab>
+                  <v-tab class="accent">
+                    salud psicoemocional
+                  </v-tab>
+                  <v-tab class="accent">
+                    salud espiritual
+                  </v-tab>
+                  <v-tab class="accent">
+                    Nutrición
+                  </v-tab>
+                </v-tabs>
+              </v-col>
+              <v-col class="accent" />
+            </v-row>
           </v-container>
         </base-section>
       </v-theme-provider>

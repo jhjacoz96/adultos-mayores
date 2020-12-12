@@ -3,7 +3,7 @@
     <base-section-heading title="Tipos de adulto mayor">
       La Geriatría, especialidad médica que trata a los adultos mayores, los clasifica en funcionales
       y disfuncionales basándose en escalas que miden la capacidad para realizar las actividades de
-      la vida díaria,
+      la vida díaria.
     </base-section-heading>
 
     <v-container>
@@ -45,9 +45,9 @@
           body: 'Son aquellos adultos mayores que por algún motivo presentan una limitación para efectuar las tareas mínimas necesarias para valerse por sí mismos.',
         },
         {
-          title: 'Independiente',
+          title: 'Independientes',
           icon: 'mdi-human-handsup',
-          body: 'Busca proveerse de medidas que beneficien su propia seguridad; es decir, que es capaz de mantener un entorno seguro para él mismo, o acondicionarlo según sus necesidades. Podríamos decir que la seguridad del adulto independiente proviene de la conciencia que tiene de su propio estado y de su propia condición, lo cual le confiere una estabilidad lo mismo física que emocional Por su parte, el adulto dependiente puede presentar un déficit cognitivo que no le permite discernir entre las situaciones seguras y las situaciones de peligro. De igual manera, no adecúa sus actividades y su entorno a los cambios propios del proceso de envejecimiento que afectan de forma significativa la necesidad de seguridad.',
+          body: 'Busca proveerse de medidas que beneficien su propia seguridad; es decir, que es capaz de mantener un entorno seguro para él mismo, o acondicionarlo según sus necesidades. Podríamos decir que la seguridad del adulto independiente proviene de la conciencia que tiene de su propio estado y de su propia condición, lo cual le confiere una estabilidad tanto física como emocional. Por su parte, el adulto dependiente puede presentar un déficit cognitivo que no le permite discernir entre las situaciones seguras y las situaciones de peligro. De igual manera, no adecúa sus actividades y su entorno a los cambios propios del proceso de envejecimiento que afectan de forma significativa la necesidad de seguridad.',
         },
       ],
     }),

@@ -13,10 +13,10 @@
           max-width="700"
           width="100%"
         >
-          <base-heading title="CUÍDAME COMO TE CUIDÉ" />
+          <base-heading title="CUIDAME COMO TE CUIDÉ" />
 
           <base-body>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis, error ipsum ex modi saepe explicabo. Quidem eaque numquam quasi sint est, aut dolorem quis a velit quibusdam sunt repellendus!
+            Sitio web dirigido a los familiares y cuidadores de adultos mayores.
           </base-body>
 
           <div

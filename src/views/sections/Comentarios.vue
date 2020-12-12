@@ -128,6 +128,7 @@
             />
           </v-form>
           <v-btn
+          :disabled="comentario.nombre === '' || comentario.descripcion === '' || comentario.titulo === ''"
             color="primary"
             large
             @click.prevent="comentar()"
@@ -178,10 +179,6 @@
       ...mapActions(['postComentario']),
 
       comentar () {
-        const formData = new FormData()
-        formData.append('nombre', this.nombre)
-        formData.append('titulo', this.titulo)
-        formData.append('descripcion', this.descripcion)
         this.postComentario(this.comentario)
       },
     },

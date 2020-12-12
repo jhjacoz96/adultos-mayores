@@ -19,7 +19,7 @@
             <ul>
               <li>
                 <p class="grey--text subtitle-1 display-4 text--darken-1">
-                  La nutrición y formas de estilo de vida contribuyen a acelerar o disminuir la pérdida de tejidos y funciones del cuerpo
+                  La nutrición y formas de estilo de vida contribuyen a acelerar o disminuir la pérdida de tejidos y funciones del cuerpo.
                 </p>
               </li>
             </ul>

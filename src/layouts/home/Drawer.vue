@@ -50,10 +50,41 @@
         </v-list-item>
       </v-list-group>
     </v-list>
+    <v-list
+      v-if="loggout"
+      color="white"
+    >
+      <v-list-item  @click="sessionOff(false)">
+        <v-list-item-content>
+          <v-list-item-tex>
+            <v-icon>
+              mdi-account-off
+            </v-icon>
+            Salir
+          </v-list-item-tex>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+    <v-list
+      v-else
+      color="white"
+    >
+      <v-list-item to="/login">
+        <v-list-item-content>
+          <v-list-item-title>
+            <v-icon>
+              mdi-account
+            </v-icon>
+            Iniciar seción
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
     name: 'HomeDrawer',
 
@@ -66,6 +97,12 @@
         type: Array,
         default: () => ([]),
       },
+    },
+    computed: {
+      ...mapState(['loggout']),
+    },
+    methods: {
+      ...mapMutations(['sessionOff']),
     },
   }
 </script>

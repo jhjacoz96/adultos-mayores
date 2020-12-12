@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import router from '@/router'
 Vue.use(Vuex)
 
 const url = 'http://localhost:3004/api'
@@ -12,6 +12,7 @@ export default new Vuex.Store({
             username: 'admin',
             password: '12345678',
         },
+        loggout: false,
         snackbar: {
             visible: false,
             color: 'success',
@@ -66,6 +67,14 @@ export default new Vuex.Store({
                 return com
             })
             state.comentarios = comentarios
+        },
+        LOGIN (state, payload) {
+            state.loggout = payload
+            router.push('/administrador')
+        },
+        sessionOff (state, payload) {
+            state.loggout = payload
+            router.push('/')
         },
     },
     actions: {

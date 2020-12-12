@@ -23,7 +23,14 @@
               cols="12"
               md="5"
             >
-              <v-card-text class="mt-12">
+              <v-alert
+                dense
+                border="left"
+                type="warning"
+              >
+                Solamente podrás autenticarte como <strong>administrador</strong>.
+              </v-alert>
+              <v-card-text class="mt-6">
                 <h1 class="text-center display-2">
                   Iniciar sesión
                 </h1>
@@ -60,6 +67,7 @@
               </v-card-text>
               <div class="text-center mt-3">
                 <v-btn
+                  :disabled="usuario.username === '' || usuario.password === ''"
                   color="primary"
                   large
                   @click="login()"
@@ -97,12 +105,12 @@
       ...mapState(['credenciales']),
     },
     methods: {
-      ...mapMutations(['alert']),
+      ...mapMutations(['alert', 'LOGIN']),
       login () {
         var username = this.usuario.username === this.credenciales.username
         var password = this.usuario.password === this.credenciales.password
         if (username && password) {
-          this.$router.push('/administrador')
+          this.LOGIN(true)
         } else {
           this.alert({
             color: 'error',

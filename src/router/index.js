@@ -1,6 +1,7 @@
 // Imports
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '@/store'
 
 Vue.use(Router)
 
@@ -104,7 +105,14 @@ const router = new Router({
           path: 'Administrador',
           name: 'administrador',
           component: () => import('@/views/administrador/Index.vue'),
-          meta: { src: require('@/assets/ayuda.jpg') },
+          meta: { src: require('@/assets/ayuda.jpg'), auth: true },
+          beforeEnter: (to, from, next) => {
+            if (store.state.loggout) {
+              next()
+            } else {
+              next('/')
+            }
+          },
         },
         {
           path: 'ayuda',

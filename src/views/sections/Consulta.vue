@@ -20,7 +20,7 @@
           <v-form>
             <v-text-field
               v-model="nombre"
-              label="Nombre"
+              label="Nombres y apellidos"
             />
             <v-autocomplete
               v-model="provincia"
@@ -57,7 +57,7 @@
             />
           </v-form>
           <v-btn
-            :disabled="disabledEsp"
+            :disabled="nombre === '' || provincia === '' || canton === '' || descripcion === ''"
             color="primary"
             class="font-weight-bold"
             x-large
@@ -93,9 +93,9 @@
     data () {
       return {
         nombre: '',
-        provincia: null,
-        especialidad: null,
-        canton: null,
+        provincia: '',
+        especialidad: '',
+        canton: '',
         descripcion: '',
         disabledCanton: true,
         disabledEsp: true,
