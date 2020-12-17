@@ -16,7 +16,7 @@
           <base-heading title="CUIDAME COMO TE CUIDÉ" />
 
           <base-body>
-            Sitio web dirigido a los familiares y cuidadores de adultos mayores.
+            Desde la cotidianidad de nuestras vidas, existe un constante crecimiento, en el cuál nos detenemos a pensar ¿Como lo han hecho para tenernos donde estamos ahora? ¿Que debemos ahora hacer por ellos? ¿Como? Es por ello, la intención de este sitio web, al partir de aquí descubrirás todo el contenido preparado para tí, un sin fin de razones y respuestas para saber de que se trata, Sí, porqué Ya es Tu TURNO de Cuidarlos como ellos te cuidaron a tí, dudas e inquietudes que podrán ser respondidas de inmediato.
           </base-body>
 
           <div
