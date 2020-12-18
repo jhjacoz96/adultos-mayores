@@ -54,7 +54,7 @@
       v-if="loggout"
       color="white"
     >
-      <v-list-item  @click="sessionOff(false)">
+      <v-list-item @click="sessionOff(false)">
         <v-list-item-content>
           <v-list-item-tex>
             <v-icon>

@@ -13,6 +13,7 @@
         'tipo-adultos',
         'infografias',
         'quienes-son',
+        'social-media',
         'comentarios',
       ]),
     ],

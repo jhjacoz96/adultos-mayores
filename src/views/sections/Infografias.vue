@@ -27,7 +27,7 @@
                     Salud física
                   </v-tab>
                   <v-tab class="accent">
-                    Cuidados de la piel y prevención de accidentes
+                    Cuidados de la piel
                   </v-tab>
                   <v-tab class="accent">
                     salud psicoemocional
@@ -53,42 +53,37 @@
       <v-tabs-items v-model="tab">
         <v-tab-item>
           <v-container fluid>
-            <h1>Aquí va la inforgrafia de salud física</h1>
-            <!-- <v-img
-              src="@/assets/infografia-adulto-mayor.jpg"
-            /> -->
+            <v-img
+              src="@/assets/infoSaludFisica.png"
+            />
           </v-container>
         </v-tab-item>
         <v-tab-item>
           <v-container fluid>
-            <h1>Aquí va la inforgrafia de cuidados de la piel y prevención de accidentes</h1>
-            <!-- <v-img
-              src="@/assets/infografia-adulto-mayor.jpg"
-            /> -->
+          <v-img
+            src="@/assets/infoCuidadoPiel.png"
+          />
           </v-container>
         </v-tab-item>
         <v-tab-item>
           <v-container fluid>
-            <h1>Aquí va la inforgrafia de salud psicoemocional</h1>
-            <!-- <v-img
-              src="@/assets/infografia-adulto-mayor.jpg"
-            /> -->
+            <v-img
+              src="@/assets/infoSaludPsicoemocional.png"
+            />
           </v-container>
         </v-tab-item>
         <v-tab-item>
           <v-container fluid>
-            <h1>Aquí va la inforgrafia de salud espiritual</h1>
-            <!-- <v-img
-              src="@/assets/infografia-adulto-mayor.jpg"
-            /> -->
+            <v-img
+              src="@/assets/infoSaludEspiritual.png"
+            />
           </v-container>
         </v-tab-item>
         <v-tab-item>
           <v-container fluid>
-            <h1>Aquí va la inforgrafia de nutrición</h1>
-            <!-- <v-img
-              src="@/assets/infografia-adulto-mayor.jpg"
-            /> -->
+            <v-img
+              src="@/assets/infoNutricion.png"
+            />
           </v-container>
         </v-tab-item>
       </v-tabs-items>

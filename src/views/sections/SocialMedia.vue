@@ -5,43 +5,69 @@
       class="accent text-center"
       space="56"
     >
-      <base-icon class="mb-8">
-        mdi-twitter
-      </base-icon>
+      <v-row>
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <base-icon class="mb-8">
+            mdi-instagram
+          </base-icon>
+          <base-section-heading
+            color="transparent"
+            title="Instagram"
+          />
 
-      <base-section-heading
-        color="transparent"
-        title="Social Media"
-      >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur recusandae aut repudiandae illo error obcaecati dolores voluptate, tempore.
-      </base-section-heading>
+          <div class="py-4" />
 
-      <a
-        class="d-inline-block mb-8"
-        href="https://vuetifyjs.com"
-        style="text-decoration: none;"
-        target="_blank"
-      >
-        https://vuetifyjs.com
-      </a>
+          <v-btn
+            class="font-weight-bold"
+            color="white"
+            href="https://www.facebook.com/Cu%C3%ADdame-como-te-Cuide-104871891512138/?view_public_for=104871891512138"
+            light
+            min-width="168"
+            target="_blank"
+            x-large
+          >
+            Siguenos
 
-      <div class="py-4" />
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
+          </v-btn>
+        </v-col>
+        <v-col
+          cols="12"
+          md="6"
+        >
+          <base-icon class="mb-8">
+            mdi-facebook
+          </base-icon>
+          <base-section-heading
+            color="transparent"
+            title="Facebook"
+          />
 
-      <v-btn
-        class="font-weight-bold"
-        color="white"
-        href="https://twitter.com/vuetifyjs"
-        light
-        min-width="168"
-        target="_blank"
-        x-large
-      >
-        Follow Us
+          <div class="py-4" />
 
-        <v-icon right>
-          mdi-open-in-new
-        </v-icon>
-      </v-btn>
+          <v-btn
+            class="font-weight-bold"
+            color="white"
+            href="https://www.instagram.com/cuidamecomotecuide/"
+            light
+            min-width="168"
+            target="_blank"
+            x-large
+          >
+            Siguenos
+
+            <v-icon right>
+              mdi-open-in-new
+            </v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>º
+
     </base-section>
   </v-theme-provider>
 </template>

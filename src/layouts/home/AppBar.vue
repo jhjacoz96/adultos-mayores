@@ -133,7 +133,7 @@
       ],
       more: [
         {
-          name: 'SALUD FíSICA',
+          name: 'SALUD FÍSICA',
           to: 'Salud-fisica',
         },
         {

@@ -14,10 +14,10 @@
           <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
             <template v-for="(s, i) in social">
               <a
-                :key="s"
+                :key="s.name"
                 class="white--text pa-1 pa-md-0"
-                href="#"
-                v-text="s"
+                href="s.to"
+                v-text="s.name"
               />
 
               <v-responsive
@@ -50,10 +50,8 @@
 
     data: () => ({
       social: [
-        'Facebook',
-        'Twitter',
-        'Instagram',
-        'Linkedin',
+        { name: 'Facebook', to: '' },
+        { name: 'Instagram', to: '' },
       ],
     }),
   }

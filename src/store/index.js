@@ -4,7 +4,8 @@ import axios from 'axios'
 import router from '@/router'
 Vue.use(Vuex)
 
-const url = 'http://localhost:3004/api'
+// const url = 'http://localhost:3004/api'
+const url = 'https://empoderamiento.herokuapp.com/api'
 
 export default new Vuex.Store({
     state: {

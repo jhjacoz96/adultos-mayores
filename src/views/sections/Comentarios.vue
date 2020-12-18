@@ -128,7 +128,7 @@
             />
           </v-form>
           <v-btn
-          :disabled="comentario.nombre === '' || comentario.descripcion === '' || comentario.titulo === ''"
+            :disabled="comentario.nombre === '' || comentario.descripcion === '' || comentario.titulo === ''"
             color="primary"
             large
             @click.prevent="comentar()"
